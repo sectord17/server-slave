@@ -1,0 +1,14 @@
+[Unit]
+Description=Sector D-17: Server Slave
+
+[Service]
+ExecStart=/usr/bin/node /home/sectord17/server-slave/bin/www
+Restart=always
+User=sectord17
+Group=sectord17
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/sectord17/server-slave
+
+[Install]
+WantedBy=multi-user.target
