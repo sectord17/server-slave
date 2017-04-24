@@ -14,7 +14,7 @@ if (process.env.SENTRY_DSN) {
 }
 
 app.debug = function (message) {
-    if (process.env.APP_DEBUG) {
+    if (process.env.DEBUG) {
         console.log(message);
     }
 };

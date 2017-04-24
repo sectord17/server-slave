@@ -12,6 +12,7 @@
     "express": "~4.14.1",
     "morgan": "~1.7.0",
     "node-env-file": "^0.1.8",
+    "portfinder": "^1.0.13",
     "process": "latest",
     "raven": "^1.2.0"
   }
