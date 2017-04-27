@@ -5,7 +5,7 @@
  */
 
 let app = require('../app');
-let debug = require('debug')('untitled:server');
+let debug = require('debug')('sectord17:http');
 let http = require('http');
 
 /**
