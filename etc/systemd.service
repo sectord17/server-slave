@@ -2,12 +2,13 @@
 Description=Sector D-17: Server Slave
 
 [Service]
-ExecStart=DEBUG=sectord17* /usr/bin/nodejs /home/sectord17/server-slave/bin/www
+ExecStart=/usr/bin/nodejs /home/sectord17/server-slave/bin/www
 Restart=always
 User=sectord17
 Group=sectord17
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
+Environment=DEBUG=sectord17*
 WorkingDirectory=/home/sectord17/server-slave
 
 [Install]
