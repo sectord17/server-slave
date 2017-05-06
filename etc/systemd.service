@@ -2,7 +2,7 @@
 Description=Sector D-17: Server Slave
 
 [Service]
-ExecStart=/usr/bin/nodejs /home/sectord17/server-slave/bin/www
+ExecStart=DEBUG=sectord17* /usr/bin/nodejs /home/sectord17/server-slave/bin/www
 Restart=always
 User=sectord17
 Group=sectord17
