@@ -5,8 +5,11 @@ let process = require('process'),
     path = require('path'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
-    BasicError = require('./lib/errors/basic-error'),
     app = express();
+
+const BasicError = require('./lib/errors/basic-error');
+const ModelNotFoundError = require('./lib/errors/model-not-found-error');
+const EndpointNotFoundError = require('./lib/errors/endpoint-not-found-error');
 
 env(__dirname + '/.env');
 
@@ -21,27 +24,27 @@ app.use(bodyParser.urlencoded({extended: false}));
 require('./lib')(app);
 
 app.use((req, res, next) => {
-    let err = new Error();
-    err.status = 404;
-    next(err);
+    next(new EndpointNotFoundError());
 });
 
 app.use((error, request, response, next) => {
+    if (error instanceof EndpointNotFoundError) {
+        return response.sendStatus(404);
+    }
+
     if (error instanceof BasicError) {
         return response.status(403).send(error);
     }
 
-    if (error.message === "model-not-found") {
+    if (error instanceof ModelNotFoundError) {
         return response.sendStatus(404);
     }
 
-    let status = error.status || 500;
-
-    if (status === 500 && process.env.SENTRY_DSN) {
+    if (process.env.SENTRY_DSN) {
         raven.captureException(error);
     }
 
-    response.sendStatus(status);
+    response.sendStatus(500);
 });
 
 module.exports = app;
