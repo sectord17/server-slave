@@ -6,15 +6,15 @@
     "start": "nodejs ./bin/www"
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.16.2",
     "body-parser": "~1.16.0",
-    "debug": "~2.6.0",
+    "debug": "^2.6.9",
     "express": "~4.14.1",
     "morgan": "~1.7.0",
     "node-env-file": "^0.1.8",
     "portfinder": "^1.0.13",
     "process": "latest",
     "raven": "^1.2.0",
-    "winston": "^2.3.1"
+    "winston": "^2.4.0"
   }
 }
