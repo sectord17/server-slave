@@ -1,6 +1,6 @@
 const axios = require('axios');
 const debug = require('debug')('sectord17-slave:game-sdk');
-const BasicError = include('/lib/errors/basic-error');
+const BasicError = include('/src/errors/basic-error');
 
 module.exports = exports = class GameSDK {
     constructor(ip, httpPort, token, childProcess) {

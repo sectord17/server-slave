@@ -1,7 +1,7 @@
 const express = require('express');
 
 module.exports = () => {
-    const {gameManager} = include('/lib');
+    const {gameManager} = include('/src');
     const router = express.Router();
 
     router.post('/games/restart', (request, response, next) => {

@@ -2,8 +2,8 @@ const fork = require('child_process').fork;
 const portfinder = require('portfinder');
 const winston = require('winston');
 const Game = require('./game');
-const BasicError = include('/lib/errors/basic-error');
-const ModelNotFoundError = include('/lib/errors/model-not-found-error');
+const BasicError = include('/src/errors/basic-error');
+const ModelNotFoundError = include('/src/errors/model-not-found-error');
 
 module.exports = exports = class GameManager {
     /**

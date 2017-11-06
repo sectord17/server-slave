@@ -6,7 +6,7 @@ module.exports = exports = class GameListener {
      * @param {Game} game
      */
     constructor(game) {
-        const {gameManager} = include('/lib');
+        const {gameManager} = include('/src');
         this.game = game;
         this.gameManager = gameManager;
     }

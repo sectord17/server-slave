@@ -1,4 +1,4 @@
-const GameSDK = include('/lib/sdk/game-sdk');
+const GameSDK = include('/src/sdk/game-sdk');
 const GameListener = require('./game-listener');
 
 module.exports = exports = class Game {

@@ -2,7 +2,7 @@ const express = require('express');
 const transformGame = require('../../transformers/game-transformer');
 
 module.exports = () => {
-    const {gameManager} = include('/lib');
+    const {gameManager} = include('/src');
     const router = express.Router();
 
     /**
