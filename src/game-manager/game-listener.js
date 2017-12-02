@@ -22,7 +22,11 @@ module.exports = exports = class GameListener {
             }
 
             if (message.event === 'players-count-changed') {
-                return this.onPlayersCountChange(message.data);
+                return this.onPlayersCountChanged(message.data);
+            }
+
+            if (message.event === 'game-status-changed') {
+                return this.onGameStatusChanged(message.data);
             }
 
             debug(`Unknown message event [${message.event}]`);
@@ -40,8 +44,13 @@ module.exports = exports = class GameListener {
         winston.log('info', `Game ${this.game.getInlineDetails()} has booted.`);
     }
 
-    onPlayersCountChange(data) {
-        debug(`Players count changed from ${this.game.playersCount} to ${data.playersCount}`);
+    onGameStatusChanged(data) {
+        debug(`Status changed from ${this.game.status} to ${data.status} on game: ${this.game.getInlineDetails()}`);
+        this.game.status = data.status;
+    }
+
+    onPlayersCountChanged(data) {
+        debug(`Players count changed from ${this.game.playersCount} to ${data.playersCount} on game: ${this.game.getInlineDetails()}`);
         this.game.playersCount = data.playersCount;
     }
 };

@@ -10,6 +10,7 @@ module.exports = exports = class Game {
         this.gamePort = parseInt(gamePort);
         this.token = token;
         this.playersCount = 0;
+        this.status = 0;
 
         this.sdk = null;
         this.childProcess = null;

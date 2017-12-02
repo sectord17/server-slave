@@ -8,5 +8,6 @@ module.exports = game => {
         ip: game.ip,
         port: game.gamePort,
         players_count: game.playersCount,
+        status: game.status,
     };
 };
