@@ -8,7 +8,7 @@ module.exports = () => {
     /**
      * @api {get} /games Get list of games
      * @apiVersion 0.0.1
-     * @apiGroup Games
+     * @apiGroup Internal
      *
      * @apiExample {json} Request:
      *      GET /games
@@ -42,7 +42,7 @@ module.exports = () => {
     /**
      * @api {post} /games Create the game
      * @apiVersion 0.0.1
-     * @apiGroup Games
+     * @apiGroup Internal
      *
      * @apiParam {String} id Id of the game
      * @apiExample {json} Request:
@@ -75,7 +75,7 @@ module.exports = () => {
     /**
      * @api {delete} /games/:gameId Delete the game
      * @apiVersion 0.0.1
-     * @apiGroup Games
+     * @apiGroup Internal
      *
      * @apiExample {json} Request:
      *      DELETE /games/1
@@ -94,7 +94,7 @@ module.exports = () => {
     /**
      * @api {post} /games/:gameId/decision Decide to join the game
      * @apiVersion 0.0.1
-     * @apiGroup Games
+     * @apiGroup Internal
      *
      * @apiExample {json} Request:
      *      POST /games/1/decision
