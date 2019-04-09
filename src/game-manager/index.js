@@ -37,7 +37,7 @@ module.exports = exports = class GameManager {
             return Promise.reject(new BasicError("game-exists"));
         }
 
-        return portfinder.getPortPromise()
+        return portfinder.getPortPromise({port: 3003})
             .then(httpPort => Promise.all([httpPort, portfinder.getPortPromise({port: httpPort + 1})]))
             .then(([httpPort, gamePort]) => {
                 const game = new Game(id, name, this.gameIp, httpPort, gamePort, this.gameToken);
